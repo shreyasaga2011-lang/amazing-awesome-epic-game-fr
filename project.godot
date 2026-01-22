@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="BestGameEver"
+run/main_scene="uid://qiyw3apb280f"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
