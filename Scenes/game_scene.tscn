@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://qiyw3apb280f"]
+[gd_scene load_steps=5 format=3 uid="uid://qiyw3apb280f"]
 
 [ext_resource type="PackedScene" uid="uid://byo3lfn58vrkb" path="res://Scenes/platform_one.tscn" id="1_x87qo"]
 [ext_resource type="PackedScene" uid="uid://d0mkvp66egq24" path="res://Scenes/player.tscn" id="2_b6fju"]
+[ext_resource type="PackedScene" uid="uid://bl2epwb2l03df" path="res://Scenes/area_2d.tscn" id="3_6h5vk"]
+[ext_resource type="PackedScene" uid="uid://bctiluvp6gmvm" path="res://Scenes/checkpoint.tscn" id="4_fiftr"]
 
 [node name="Game Scene" type="Node2D"]
 
@@ -19,3 +21,9 @@ position = Vector2(335, 217)
 
 [node name="PlatformOne4" parent="." instance=ExtResource("1_x87qo")]
 position = Vector2(979, 108)
+
+[node name="KillZone" parent="." instance=ExtResource("3_6h5vk")]
+position = Vector2(-174, 725)
+
+[node name="Checkpoint" parent="." instance=ExtResource("4_fiftr")]
+position = Vector2(693, 187)

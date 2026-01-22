@@ -15,6 +15,11 @@ run/main_scene="uid://qiyw3apb280f"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+playerGlobal="*res://player_global.gd"
+checkpointGlobal="*res://checkpoint_global.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
