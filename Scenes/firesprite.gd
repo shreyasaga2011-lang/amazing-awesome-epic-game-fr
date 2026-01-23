@@ -1,16 +1,37 @@
 extends Sprite2D
 
+var timer_seconds: float = 0.0
+var timer_interval: float = 15.0
+var canvas_layer: CanvasLayer
 
-var timer_seconds: float = 0.0  # Current timer
-var timer_interval: float = 15.0  # 15 seconds
+func _ready():
+	# Create CanvasLayer with explicit settings
+	canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 100  # Put it on top
+	canvas_layer.follow_viewport_enabled = false
+	canvas_layer.follow_viewport_scale = 1.0
+	get_tree().root.add_child(canvas_layer)
+	
+	# Remove from current parent
+	get_parent().remove_child(self)
+	canvas_layer.add_child(self)
+	
+	# Center at top of screen
+	position = Vector2(get_viewport().get_visible_rect().size.x / 2,10)
+
+func _process(_delta):
+	# Force position every frame to ensure it stays put
+	var viewport_size = get_viewport().get_visible_rect().size
+	position = Vector2(viewport_size.x / 2, 10)
 
 func _physics_process(delta):
-	scale.x += 0.0009
+	scale.x += 0.00275
 	if playerGlobal.alive:
 		timer_seconds += delta  
 		if timer_seconds >= timer_interval:
 			_on_timer_timeout()
-			timer_seconds = 0  
+			timer_seconds = 0
+			scale.x = 0.035
 
 func _on_timer_timeout():
 	print("Timer expired! 15 seconds passed.")
