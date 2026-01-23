@@ -16,13 +16,13 @@ func _ready():
 	get_parent().remove_child(self)
 	canvas_layer.add_child(self)
 	
-	# Center at top of screen
-	position = Vector2(get_viewport().get_visible_rect().size.x / 2,10)
+	
+	position = Vector2(get_viewport().get_visible_rect().size.x / 2,20)
 
 func _process(_delta):
 	# Force position every frame to ensure it stays put
 	var viewport_size = get_viewport().get_visible_rect().size
-	position = Vector2(viewport_size.x / 2, 10)
+	position = Vector2(viewport_size.x / 2, 20)
 
 func _physics_process(delta):
 	scale.x += 0.00563

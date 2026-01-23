@@ -49,6 +49,7 @@ scale_amount_curve = SubResource("Curve_vgqql")
 color = Color(1, 0.20784314, 0.101960786, 1)
 color_ramp = SubResource("Gradient_6t5aa")
 script = ExtResource("3_6t5aa")
+base_amount = 459
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 emitting = false

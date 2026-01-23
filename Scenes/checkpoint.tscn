@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_2cwi7")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, -25)
-amount = 30
+amount = 50
 lifetime = 0.7
 emission_shape = 3
 emission_rect_extents = Vector2(25, 1)
