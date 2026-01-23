@@ -1,24 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0mkvp66egq24"]
+[gd_scene load_steps=7 format=3 uid="uid://d0mkvp66egq24"]
 
 [ext_resource type="Script" uid="uid://bcb8sqjy85fv7" path="res://character_body_2d.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://xmkk6v1vgviu" path="res://assets/Circle.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://blw4hqte6shl5" path="res://Scenes/cpu_particles_2d.gd" id="3_6t5aa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 13.0
+
+[sub_resource type="Curve" id="Curve_vgqql"]
+_data = [Vector2(0.18023258, 1), 0.0, 0.0, 0, 0, Vector2(0.42441863, 0.7415731), 0.0, 0.0, 0, 0, Vector2(0.72674423, 0.32584274), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_6t5aa"]
+colors = PackedColorArray(0.5882353, 0, 0, 1, 1, 0.45490196, 0.09803922, 1)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 7)
 shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.3372549, 0.7921569, 0.12156863, 1)
-position = Vector2(8, 7)
+modulate = Color(0.9364769, 0.5757663, 0.17326412, 1)
+position = Vector2(5.9604645e-08, 1.6940659e-21)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+lifetime = 0.5
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 140.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_vgqql")
+color = Color(1, 0.20784314, 0.101960786, 1)
+color_ramp = SubResource("Gradient_6t5aa")
+script = ExtResource("3_6t5aa")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1000
+explosiveness = 0.7
+randomness = 0.68
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 1.4
+scale_amount_max = 3.0
+color = Color(1, 0.08235294, 0.003921569, 1)

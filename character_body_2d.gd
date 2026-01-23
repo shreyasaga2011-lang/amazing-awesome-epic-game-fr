@@ -13,6 +13,8 @@ var is_dragging: bool = false
 var jump_count: int = 0
 
 func _physics_process(delta):
+	playerGlobal.currentVelocityX = velocity.x 
+	playerGlobal.currentVelocityY = velocity.y
 	if not is_dragging:
 		# Apply gravity
 		velocity.y += gravity * delta
