@@ -13,4 +13,11 @@ script = ExtResource("1_81842")
 position = Vector2(-5774.5, 204.25)
 shape = SubResource("RectangleShape2D_3w4em")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -117629.0
+offset_top = 17.0
+offset_right = 170390.0
+offset_bottom = 8186.0
+color = Color(1, 0.22745098, 0, 1)
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

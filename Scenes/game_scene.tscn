@@ -11,10 +11,10 @@
 [node name="Game Scene" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -88367.0
-offset_top = -87833.0
-offset_right = 94773.0
-offset_bottom = 65498.0
+offset_left = -88179.0
+offset_top = -87887.0
+offset_right = 94961.0
+offset_bottom = 65444.0
 color = Color(0.38291848, 0.5912707, 0.7561197, 1)
 
 [node name="PlatformOne" parent="." instance=ExtResource("1_x87qo")]
@@ -82,6 +82,28 @@ rotation = 1.5707964
 [node name="PlatformOne17" parent="." instance=ExtResource("1_x87qo")]
 position = Vector2(5078, -2566)
 
+[node name="PlatformOne20" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(4590, -2696)
+
+[node name="PlatformOne21" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(3939, -2802)
+
+[node name="PlatformOne22" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(3286, -2934)
+
+[node name="PlatformOne23" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(2623, -3085)
+
+[node name="PlatformOne24" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(2496, -3406)
+
+[node name="PlatformOne26" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(1834, -3545)
+rotation = 1.5707964
+
+[node name="PlatformOne25" parent="." instance=ExtResource("1_x87qo")]
+position = Vector2(2177, -3285)
+
 [node name="PlatformOne18" parent="." instance=ExtResource("1_x87qo")]
 position = Vector2(5422, -2486)
 
@@ -91,6 +113,9 @@ position = Vector2(-174, 725)
 [node name="Checkpoint" parent="." instance=ExtResource("4_fiftr")]
 position = Vector2(707, 192)
 
+[node name="Checkpoint6" parent="." instance=ExtResource("4_fiftr")]
+position = Vector2(342, 319)
+
 [node name="Checkpoint2" parent="." instance=ExtResource("4_fiftr")]
 position = Vector2(2081, -1094)
 
@@ -99,6 +124,9 @@ position = Vector2(3812, -1915)
 
 [node name="Checkpoint4" parent="." instance=ExtResource("4_fiftr")]
 position = Vector2(5415, -2641)
+
+[node name="Checkpoint5" parent="." instance=ExtResource("4_fiftr")]
+position = Vector2(2184, -3449)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

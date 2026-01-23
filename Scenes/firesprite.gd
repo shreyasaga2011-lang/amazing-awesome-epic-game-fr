@@ -32,6 +32,9 @@ func _physics_process(delta):
 			_on_timer_timeout()
 			timer_seconds = 0
 			scale.x = 0.035
-
+	else:
+		scale.x = 0.035
+	if checkpointGlobal.fireReset == true:
+		scale.x = 0.035
 func _on_timer_timeout():
 	print("Timer expired! 15 seconds passed.")

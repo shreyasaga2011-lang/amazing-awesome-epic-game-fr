@@ -12,15 +12,6 @@ var drag_start: Vector2
 var is_dragging: bool = false
 var jump_count: int = 0
 
-func _ready():
-	timer.wait_time = 15
-	timer.one_shot = false   
-	timer.start()
-	timer.timeout.connect(_on_Timer_timeout)
-	
-func _on_Timer_timeout():
-	print("Timer expired! 15 seconds passed.")
-	playerGlobal.death()
 
 func _physics_process(delta):
 	playerGlobal.currentVelocityX = velocity.x 
