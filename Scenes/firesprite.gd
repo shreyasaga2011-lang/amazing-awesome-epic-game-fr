@@ -25,7 +25,7 @@ func _process(_delta):
 	position = Vector2(viewport_size.x / 2, 10)
 
 func _physics_process(delta):
-	scale.x += 0.00275
+	scale.x += 0.00563
 	if playerGlobal.alive:
 		timer_seconds += delta  
 		if timer_seconds >= timer_interval:

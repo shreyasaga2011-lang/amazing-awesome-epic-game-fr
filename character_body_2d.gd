@@ -14,7 +14,7 @@ var jump_count: int = 0
 
 func _ready():
 	timer.wait_time = 15
-	timer.one_shot = false   # false means it will repeat
+	timer.one_shot = false   
 	timer.start()
 	timer.timeout.connect(_on_Timer_timeout)
 	
