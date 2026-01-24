@@ -11,9 +11,12 @@ extends CharacterBody2D
 var drag_start: Vector2
 var is_dragging: bool = false
 var jump_count: int = 0
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_stream_player_2d_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 
 func _physics_process(delta):
+	playerGlobal.jumpCount = jump_count
 	playerGlobal.currentVelocityX = velocity.x 
 	playerGlobal.currentVelocityY = velocity.y
 	if not is_dragging:
@@ -29,22 +32,24 @@ func _physics_process(delta):
 			
 		move_and_slide()
 	if playerGlobal.alive == false:
+		audio_stream_player_2d_2.play()
 		position.x = checkpointGlobal.currentX
 		position.y = checkpointGlobal.currentY
 		cpu_particles_2d_2.emitting = true
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and jump_count < max_jumps:
-			# Start dragging
+			
 			drag_start = get_global_mouse_position()
 			is_dragging = true
 		elif event.is_released() and is_dragging:
-			# Release - shoot the ball
+			
 			shoot()
 			is_dragging = false
 			jump_count += 1
 
 func shoot():
+	audio_stream_player_2d.play()
 	var drag_end = get_global_mouse_position()
 	var direction = drag_start - drag_end
 	var power = min(direction.length(), max_power)

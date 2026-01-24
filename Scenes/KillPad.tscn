@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ywiwy6ryjivd"]
+
+[ext_resource type="Script" uid="uid://b047s55qqytub" path="res://Scenes/kill_pad.gd" id="1_g4gux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w4em"]
+size = Vector2(73.625, 49.75)
+
+[node name="KillZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_g4gux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.1875, 1.125)
+shape = SubResource("RectangleShape2D_3w4em")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -37.0
+offset_top = -24.0
+offset_right = 37.0
+offset_bottom = 26.0
+color = Color(1, 0.22745098, 0, 1)
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

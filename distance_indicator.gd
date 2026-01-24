@@ -1,7 +1,6 @@
-extends Node
-var jumpCount = 0
-var currentVelocityX =  300
-var currentVelocityY =  300
+extends Node2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,11 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-var alive = true
-func death():
-	checkpointGlobal.resetFire()
-	alive = false
-	await get_tree().create_timer(0.1).timeout
-	alive = true
-	

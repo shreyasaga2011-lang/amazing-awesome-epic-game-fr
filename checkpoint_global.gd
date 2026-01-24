@@ -21,7 +21,9 @@ func reset_timer():
 	time_left = max_time
 
 var fireReset = false
+
 func resetFire():
 	fireReset = true
 	await get_tree().create_timer(0.01).timeout
 	fireReset = false
+	reset_timer()

@@ -1,7 +1,5 @@
 extends Sprite2D
 
-var timer_seconds: float = 0.0
-var timer_interval: float = 15.0
 var canvas_layer: CanvasLayer
 
 func _ready():
@@ -11,8 +9,6 @@ func _ready():
 	canvas_layer.follow_viewport_enabled = false
 	canvas_layer.follow_viewport_scale = 1.0
 	get_tree().root.add_child(canvas_layer)
-	
-	# Remove from current parent
 	get_parent().remove_child(self)
 	canvas_layer.add_child(self)
 	
@@ -25,16 +21,8 @@ func _process(_delta):
 	position = Vector2(viewport_size.x / 2, 20)
 
 func _physics_process(delta):
-	scale.x += 0.00563
-	if playerGlobal.alive:
-		timer_seconds += delta  
-		if timer_seconds >= timer_interval:
-			_on_timer_timeout()
-			timer_seconds = 0
-			scale.x = 0.035
-	else:
+	scale.x += 0.0059
+	if !playerGlobal.alive:
 		scale.x = 0.035
 	if checkpointGlobal.fireReset == true:
 		scale.x = 0.035
-func _on_timer_timeout():
-	print("Timer expired! 15 seconds passed.")
